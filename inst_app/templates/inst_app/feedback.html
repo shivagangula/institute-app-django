@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>feedback</title>
+         <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+<div class="topnav">
+  <a href="{% url 'home' %}">     Home        </a>
+  <a href="{% url 'services' %}">     Services    </a>
+  <a href="{% url 'contact' %}">     Contact     </a>
+  <a href="{% url 'feedback' %}">     Feedback    </a>
+  <a href="{% url 'gal' %}">     Gallary     </a>
+  <h4 style="color:white;margin-left:90%;">Readerplace Inst.</h4>
+
+</div>
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <div style="border: 1px blue solid;border-radius: 5px;margin: 10px;border-left:30px blue solid;">
+
+            <center><h1 style="color: blue">Feedback form</h1></center></div>
+            <form method="post">
+                {% csrf_token %}
+                {{ form }}
+                <center> <input type="submit" class="btn btn-sucess"></center>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div  class="container">
+    <div class="row">
+    <center><h1 style="color: blue;">Privous feedbacks</h1></center>
+        {% for data in data %}
+        <div style="border: 1px blue solid;border-radius: 5px;margin: 10px;border-left:15px blue solid;" class="col-md-12  ">
+
+               <h5>NAME :</h5> <h6 style="color: blue;"> {{ data.name }}</h6>
+                <h5>RATING: </h5><h6 style="color: blue;">{{ data.rating }}</h6>
+                <h5>SUBMITED TIME: </h5><h6 style="color: blue;">{{ data.time }}</h6>
+                <h5>FEEDBACK: </h5><p style="color: blue">{{ data.feedback }}</p>
+        <br>
+
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+
+
+<div style="border: 1px blue solid;border-radius: 5px;margin: 10px;border-left:30px blue solid;">
+<center><h5 style="color: blue">Total visits : {{ visits }}</h5></center>
+</div>
+		<footer class="footer-distributed">
+
+			<div class="footer-right">
+
+			</div>
+
+			<div class="footer-left">
+
+				<p class="footer-links">
+					<a href="https://www.instagram.com/shiva_gangula/" target="_blank">Instagram</a>
+					·
+					<a href="https://www.facebook.com/shivagangula44">facebook</a>
+					·
+					<a href="https://www.linkedin.com/in/shiva-krishna-prasad-gangula-a77b43122/" target="_blank">Linkdin</a>
+					·
+					<a href="https://github.com/shivagangula" target="_blank">GitHub</a>
+
+				</p>
+
+				<p>Dev.shiva &copy; 2019</p>
+			</div>
+
+		</footer>
+
+</body>
+</html>

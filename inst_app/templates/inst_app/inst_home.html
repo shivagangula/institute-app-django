@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+<div class="topnav">
+  <a href="{% url 'home' %}">     Home        </a>
+  <a href="{% url 'services' %}">     Services    </a>
+  <a href="{% url 'contact' %}">     Contact     </a>
+  <a href="{% url 'feedback' %}">     Feedback    </a>
+  <a href="{% url 'gal' %}">     Gallary     </a>
+  <h4 style="color:white;margin-left:90%;">Readerplace Inst.</h4>
+</div>
+
+
+
+
+
+
+
+<div style="border: 1px blue solid;border-radius: 5px;margin: 10px;border-left:30px blue solid;">
+<center><h5 style="color: blue">Total visits : {{ visits }}</h5></center>
+</div>
+
+
+		<footer class="footer-distributed">
+
+			<div class="footer-right">
+
+			</div>
+
+			<div class="footer-left">
+
+				<p class="footer-links">
+					<a href="https://www.instagram.com/shiva_gangula/" target="_blank">Instagram</a>
+					·
+					<a href="https://www.facebook.com/shivagangula44">facebook</a>
+					·
+					<a href="https://www.linkedin.com/in/shiva-krishna-prasad-gangula-a77b43122/" target="_blank">Linkdin</a>
+					·
+					<a href="https://github.com/shivagangula" target="_blank">GitHub</a>
+
+				</p>
+
+				<p>Dev.shiva &copy; 2019</p>
+			</div>
+
+		</footer>
+
+</body>
+</html>

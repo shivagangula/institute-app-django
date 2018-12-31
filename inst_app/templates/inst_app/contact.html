@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>contact</title>
+    {% load static %}
+     <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+<div class="topnav">
+  <a href="{% url 'home' %}">     Home        </a>
+  <a href="{% url 'services' %}">     Services    </a>
+  <a href="{% url 'contact' %}">     Contact     </a>
+  <a href="{% url 'feedback' %}">     Feedback    </a>
+  <a href="{% url 'gal' %}">     Gallary     </a>
+  <h4 style="color:white;margin-left:90%;">Readerplace Inst.</h4>
+
+</div>
+
+
+
+<div class="container">
+  <div style="border: 1px blue solid;border-radius: 5px;margin: 10px;border-left:30px blue solid;">
+      <h1 style="color:blue;">BRANCHES :</h1></div>
+    <div class="row">
+        <div class="col-md-4">
+            <center><h1 style="color:blue;">Hydrabad</h1></center>
+            <pre style="color:blue;">
+                Durgasoft soultions,
+                amerpet near annapurna complex,
+                hydrabad,telangana
+                500081
+            </pre>
+        </div>
+        <div class="col-md-4">
+                        <center><h1 style="color:blue;">Gujarath</h1></center>
+
+            <pre style="color:blue">
+                Durgasoft soultions,
+                gandhi nagar,
+                gujarath,india
+                5018711
+            </pre>
+    </div>
+        <div class="col-md-4">
+                        <center><h1 style="color:blue;">Mumbai</h1></center>
+
+            <pre style="color:blue">
+                Durgasoft soultions,
+                chmpapet nagar,
+                maharasta,india,
+                518711
+            </pre>
+        </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+          <div style="border: 1px blue solid;border-radius: 5px;margin: 10px;border-left:30px blue solid;">
+
+            <h1 style="color: blue;">CONTACT :</h1>
+          </div>
+            <form style="border:2px blue solid;padding:10px;border-radius:10px;color:blue;" method="post">
+                {% csrf_token %}
+                {{ form }}<br><br>
+            <center><input style="border:2px blue solid" type="submit" class="btn btn-sucess"></center>
+            </form>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<div style="border: 1px blue solid;border-radius: 5px;margin: 10px;border-left:30px blue solid;">
+<center><h5 style="color: blue">Total visits : {{ visits }}</h5></center>
+</div>
+		<footer class="footer-distributed">
+
+			<div class="footer-right">
+        <center><h1 style="color:white;">Readerplace</h1></center>
+			</div>
+
+			<div class="footer-left">
+
+				<p class="footer-links">
+					<a href="#" target="_blank">Instagram</a>
+					·
+					<a href="#">facebook</a>
+					·
+					<a href="#" target="_blank">Linkdin</a>
+					·
+					<a href="#" target="_blank">GitHub</a>
+
+				</p>
+
+				<p>Dev.shiva &copy; 2019</p>
+			</div>
+
+		</footer>
+
+</body>
+</html>
